@@ -50,9 +50,11 @@ export default class Sketch {
   setupOrthographicCamera() {
     const size = 55;
 
+    const aspect = this.width / this.height;
+
     this.camera = new THREE.OrthographicCamera(
-      -size,
-      size,
+      -size * aspect,
+      size * aspect,
       size,
       -size,
       0.01,
